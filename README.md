@@ -1,5 +1,7 @@
 # brit-test-suite
 
+![Cypress Status](https://github.com/mjblue/brit-test-suite/actions/workflows/cypress.yml/badge.svg)
+
 ## Setup
 
 This test suite requires a [Node.js installation V14 or greater](https://nodejs.org/en/download/) for your setup
