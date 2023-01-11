@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "3budi4",
   e2e: {
     specPattern: "cypress/e2e/**/*.js",
   },

@@ -57,6 +57,10 @@ npm run cypress:run
 
 ### Run tests on github
 
+Tests are run via github actions for PROD-UK_DESKTOP on a push to master
+
 ### Run tests recording to Cypress Cloud
+
+Tests are recorded to https://cloud.cypress.io/projects/3budi4/runs
 
 
