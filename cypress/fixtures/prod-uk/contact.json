@@ -1,12 +1,14 @@
-{
-      
-      "location": "Bermuda",
-      "id": "#bermudaoffice",
-      "city": "Pembroke",
-      "address": [
-        "Ground Floor",
-        "Chesney House",
-        "The Waterfront"
-      ]
+{      
+  "location": "Bermuda",
+  "id": "#bermudaoffice",
+  "city": "Pembroke",
+  "address": [
+    "Ground Floor",
+    "Chesney House",
+    "The Waterfront",
+    "96 Pitts Bay Road",
+    "Pembroke",
+    "Hamilton HM08",
+    "Bermuda"
+  ]
 }
-    
