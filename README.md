@@ -65,4 +65,14 @@ Tests are run via github actions for PROD-UK_DESKTOP on a push to master
 
 Tests are recorded to https://cloud.cypress.io/projects/3budi4/runs
 
+## Notes
 
+These tests have been written as per the initial requirement however this type of test is susceptible to flakiness due to a reliance on the test data.
+
+Suggestions to be implemented ( not fulfilled due to time constraints)
+
+- for 'prod' sanity check Contact - Reduce the number of address elements to assert so any 'copy' changes don't break the tests
+- for 'prod' sanity check Search - Reduce the reliance on the exact results by just checking some results are returned with one expected result somewhere in the results
+- for 'component' UI tests (checking all the data returned is displayed) - The json response from any backend calls (e.g. https://www.britinsurance.com/umbraco/surface/SiteSearch/GetSiteSearchHeaderResults?keyword=IFRS+17&maxResults=5&rootId=1444) should intercepted and mocked to respond with known data
+- for 'integration' tests in non prod envs, the test data should be injected to the appropriate systems during the test setup
+- Seperate out the 'navigation' part of contact test to a seperate 'navigation' suite of tests ensurting the menu bar behaves as expected. The vaildation of the data on the contact page is then a standalone test which can be navigated directly to the contact page
