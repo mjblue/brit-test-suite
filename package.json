@@ -1,0 +1,25 @@
+{
+  "name": "brit-test-suite",
+  "version": "1.0.0",
+  "description": "An Example Framework for Brit Tech Test",
+  "main": "index.js",
+  "repository": "git@github.com:mjblue/brit-test-suite.git",
+  "license": "MIT",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "dependencies": {    
+    "cypress": "^12.3.0",
+    "mocha": "^10.2.0",    
+    "chai": "^4.3.7"
+  },
+  "devDependencies": {    
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "prettier": "^2.7.1"
+  }
+}
