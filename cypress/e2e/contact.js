@@ -19,6 +19,9 @@ describe("Brit Contact Us Sanity Test", function () {
       .should("have.attr", "style")
       .and("contain", "right: 0px;");
 
+    // TODO - Potential bug on tablet mode where on first page load the culture sub menu is automatically expanded
+    // Speak to Devs / PM to discuss if expected behaviour ( seems unintuitive and doesn't happen if you've selected an option once)
+
     cy.get(".navigation--level .secondary")
       .contains("contact")
       .then((contactMenu) => {
