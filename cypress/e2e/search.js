@@ -1,5 +1,7 @@
 import { beforeEach } from "mocha";
 import { BASEWEBURL, FIXTUREFOLDER } from "../../config";
+import { common } from "../pages/common.page";
+import { search } from "../pages/search.page";
 
 describe("Brit Search Prod Sanity Test", function () {
   beforeEach("Launch HomePage", () => {
@@ -15,11 +17,11 @@ describe("Brit Search Prod Sanity Test", function () {
       cy.entersearchTerm(testData.searchterm);
 
       cy.log("Validating quick results:");
-      cy.get(".header--search__results > .result").should(
+      cy.get(common.quickSearchResultsSelector).should(
         "have.length",
         testData.resultcount
       );
-      cy.get(".header--search__results > .result").each((element, index) => {
+      cy.get(common.quickSearchResultsSelector).each((element, index) => {
         expect(element).to.contain.text(
           testData.results.find((result) => result["index"] == index)["title"]
         );
@@ -30,17 +32,15 @@ describe("Brit Search Prod Sanity Test", function () {
   it("Confirm Sanity Test Full Search Results", function () {
     cy.fixture(FIXTUREFOLDER + "search").then((testData) => {
       cy.entersearchTerm(testData.searchterm);
-      cy.get("div.component--header__search > button").click();
+      cy.get(common.searchButtonSelector).click();
       cy.title().should("equal", "Search");
       cy.log("Validating full results:");
-      cy.get("div.results-container a.s-results__tag").each(
-        (element, index, list) => {
-          expect(element).to.contain.text(
-            testData.results.find((result) => result["index"] == index)["title"]
-          );
-          expect(list).to.have.length(3);
-        }
-      );
+      cy.get(search.searchResultsSelector).each((element, index, list) => {
+        expect(element).to.contain.text(
+          testData.results.find((result) => result["index"] == index)["title"]
+        );
+        expect(list).to.have.length(3);
+      });
     });
   });
 });
